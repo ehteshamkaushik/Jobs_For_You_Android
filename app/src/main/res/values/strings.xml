@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Jobs4u</string>
+
+    <string name="Religion_prompt">Choose your religion</string>
+
+    <string-array name="religion_arrays">
+        <item>Islam</item>
+        <item>Hinduism</item>
+        <item>Christianity</item>
+        <item>Buddhism</item>
+    </string-array>
+
+    <string name="radio_male">Male</string>
+    <string name="radio_female">Female</string>
 </resources>

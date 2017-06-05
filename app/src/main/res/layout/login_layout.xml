@@ -30,8 +30,9 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="30dp"
         android:textSize="20dp"
-        tools:background="@android:color/white"
-        tools:inputType="text" />
+        android:background="@android:color/white"
+        tools:inputType="text"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,11 +49,11 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="30dp"
         android:textSize="20dp"
-        tools:background="@android:color/white"
-        tools:inputType="textPassword" />
+        android:background="@android:color/white"
+        android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/loginbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

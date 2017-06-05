@@ -26,6 +26,7 @@
             android:textColor="@android:color/white"
             android:textSize="40dp"
             android:layout_marginLeft="20dp"
+            android:id="@+id/addresume"
             />
     </LinearLayout>
 

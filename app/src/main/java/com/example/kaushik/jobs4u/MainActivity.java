@@ -1,5 +1,6 @@
 package com.example.kaushik.jobs4u;
 
+import android.content.Intent;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,12 +14,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_resume);
+        setContentView(R.layout.activity_main);
 
-
-    }
-    public void showDatePickerDialog(android.view.View v) {
-        DatePickerFragment newFragment = new DatePickerFragment();
-        newFragment.show(getSupportFragmentManager(), "datePicker");
+        TextView jobSeeker = (TextView) findViewById(R.id.jobSeeker);
+        jobSeeker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent loginIntent = new Intent(MainActivity.this, loginActivity.class);
+                startActivity(loginIntent);
+            }
+        });
     }
 }

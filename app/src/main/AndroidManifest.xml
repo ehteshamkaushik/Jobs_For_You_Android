@@ -15,6 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".loginActivity"
+            android:label="Numbers" />
+        <activity android:name=".UserProfileActivity"
+            android:label="Numbers" />
+        <activity android:name=".ResumeActivity"
+            android:label="Numbers" />
+        <activity android:name=".AddResumeActivity"
+            android:label="Numbers" />
     </application>
 
 </manifest>
