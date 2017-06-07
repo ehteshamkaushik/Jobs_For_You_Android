@@ -19,7 +19,7 @@ public class ResumeActivity extends AppCompatActivity {
         addresume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent loginIntent = new Intent(ResumeActivity.this, AddResumeActivity.class);
+                Intent loginIntent = new Intent(ResumeActivity.this, Resume_form.class);
                 startActivity(loginIntent);
             }
         });

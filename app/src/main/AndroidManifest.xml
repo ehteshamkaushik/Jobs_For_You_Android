@@ -21,7 +21,9 @@
             android:label="Numbers" />
         <activity android:name=".ResumeActivity"
             android:label="Numbers" />
-        <activity android:name=".AddResumeActivity"
+        <activity android:name=".Resume_form"
+            android:label="Numbers" />
+        <activity android:name=".RegisterActivity"
             android:label="Numbers" />
     </application>
 
