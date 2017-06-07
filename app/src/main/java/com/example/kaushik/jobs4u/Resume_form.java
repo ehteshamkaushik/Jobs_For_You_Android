@@ -9,20 +9,27 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.annotation.IdRes;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static android.R.attr.data;
 import static java.security.AccessController.getContext;
@@ -32,12 +39,28 @@ import static java.security.AccessController.getContext;
  */
 
 public class Resume_form extends AppCompatActivity {
-
+    AppCompatActivity activity = Resume_form.this;
+    String usernametext;
+    EditText fullname, father, mother, nationality, objective, dob;
+    RadioGroup gender;
+    Spinner religion;
+    ImageButton image;
+    resumeDatabaseHelper resumeDatabaseHelper;
+    UserResume userResume;
+    Button saveResume;
+    List<UserEducation> educationList = new ArrayList<>();
+    List<UserExperience> experienceList = new ArrayList<>();
+    List<UserSkill> skillsList = new ArrayList<>();
     final int GET_FROM_GALLERY = 3;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_resume);
+        Intent intent = getIntent();
 
+        initViews();
+        initObjects();
+        usernametext = intent.getStringExtra("username");
+        Toast.makeText(this, usernametext, Toast.LENGTH_LONG).show();
 
 
 
@@ -89,6 +112,7 @@ public class Resume_form extends AppCompatActivity {
 
                         DateTable.addView(date);
                         adddate.setVisibility(View.INVISIBLE);
+                        userResume.setDob(d.getText() + " " + m.getText() + " " + y.getText());
                         dialog.dismiss();
                     }
                 });
@@ -146,6 +170,9 @@ public class Resume_form extends AppCompatActivity {
                         newEducation.addView(institute);
                         newEducation.addView(grade);
                         EducationTable.addView(newEducation);
+                        UserEducation userEducation = new UserEducation(usernametext, e.getText().toString(),
+                                y.getText().toString(), i.getText().toString(), g.getText().toString());
+                        educationList.add(userEducation);
                         dialog.dismiss();
                     }
                 });
@@ -198,6 +225,10 @@ public class Resume_form extends AppCompatActivity {
                         newExperience.addView(designation);
                         newExperience.addView(duration);
                         ExperienceTable.addView(newExperience);
+
+                        UserExperience userExperience = new UserExperience(usernametext, c.getText().toString(),
+                                des.getText().toString(), dur.getText().toString());
+                        experienceList.add(userExperience);
                         dialog.dismiss();
                     }
                 });
@@ -245,6 +276,9 @@ public class Resume_form extends AppCompatActivity {
                         newSkill.addView(skill);
                         newSkill.addView(recognition);
                         SkillTable.addView(newSkill);
+                        UserSkill userSkill = new UserSkill(usernametext, s.getText().toString(),
+                                r.getText().toString());
+                        skillsList.add(userSkill);
                         dialog.dismiss();
                     }
                 });
@@ -263,6 +297,60 @@ public class Resume_form extends AppCompatActivity {
                         GET_FROM_GALLERY);
             }
         });
+
+        saveResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SaveResumetoDatabase();
+                Toast.makeText(v.getContext(), "Resume Successfully Added", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Resume_form.this, ResumeActivity.class);
+            }
+        });
+
+        religion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                userResume.setReligion(parent.getItemAtPosition(position).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (checkedId == R.id.radioMale)
+                {
+                    userResume.setGender("Male");
+                    Toast.makeText(Resume_form.this, "Male ", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    userResume.setReligion("Female");
+                    Toast.makeText(Resume_form.this, "Female", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private void initViews() {
+        fullname = (EditText) findViewById(R.id.fullname);
+        father = (EditText)findViewById(R.id.father);
+        mother = (EditText) findViewById(R.id.mother);
+        religion = (Spinner) findViewById(R.id.religion);
+        gender = (RadioGroup) findViewById(R.id.gender);
+        objective = (EditText) findViewById(R.id.objective);
+        saveResume = (Button)findViewById(R.id.save);
+        image = (ImageButton) findViewById(R.id.personalimage);
+        nationality = (EditText) findViewById(R.id.nationality);
+    }
+
+    private void initObjects() {
+        resumeDatabaseHelper = new resumeDatabaseHelper(activity);
+        userResume = new UserResume();
     }
 
     @Override
@@ -277,9 +365,10 @@ public class Resume_form extends AppCompatActivity {
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
                 bitmap = decodeUri(this, selectedImage, 300);
-                ImageButton imageButton = (ImageButton) findViewById(R.id.myButton);
+                ImageButton imageButton = (ImageButton) findViewById(R.id.personalimage);
 
                 imageButton.setImageBitmap(bitmap);
+                userResume.setImage(bitmap);
             } catch (FileNotFoundException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -311,6 +400,69 @@ public class Resume_form extends AppCompatActivity {
         BitmapFactory.Options o2 = new BitmapFactory.Options();
         o2.inSampleSize = scale;
         return BitmapFactory.decodeStream(c.getContentResolver().openInputStream(uri), null, o2);
+    }
+
+
+    private void SaveResumetoDatabase() {
+        String errormsg = "Please enter ";
+        if(fullname.getText().toString().equals(""))
+        {
+            Toast.makeText(this, errormsg + " fullname", Toast.LENGTH_LONG).show();
+            return;
+        }
+        else if (father.getText().toString().equals(""))
+        {
+            Toast.makeText(this, errormsg + " father's name", Toast.LENGTH_LONG).show();
+            return;
+        }
+        else if (mother.getText().toString().equals(""))
+        {
+            Toast.makeText(this, errormsg + " mother's name", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        else if (nationality.getText().toString().equals(""))
+        {
+            Toast.makeText(this, errormsg + " Nationality", Toast.LENGTH_LONG).show();
+            return;
+        }
+        else if (educationList.size() == 0)
+        {
+            Toast.makeText(this, errormsg + " Education", Toast.LENGTH_LONG).show();
+            return;
+        }
+        else if (objective.getText().toString().equals(""))
+        {
+            Toast.makeText(this, errormsg + " Career Objective", Toast.LENGTH_LONG).show();
+            return;
+        }
+        else if (resumeDatabaseHelper.checkUser(usernametext))
+        {
+            Toast.makeText(this, "Already have a resume", Toast.LENGTH_LONG).show();
+            return;
+        }
+        else
+        {
+            userResume.setUsername(usernametext);
+            userResume.setFullname(fullname.getText().toString());
+            userResume.setFather(father.getText().toString());
+            userResume.setMother(mother.getText().toString());
+            userResume.setCareer_objective(objective.getText().toString());
+            resumeDatabaseHelper.addUserResume(userResume);
+            for (int i = 0; i < educationList.size(); i++)
+            {
+                resumeDatabaseHelper.addUserEducation(educationList.get(i));
+            }
+            for (int i = 0; i < experienceList.size(); i++)
+            {
+                resumeDatabaseHelper.addUserExperience(experienceList.get(i));
+            }
+            for (int i = 0; i < skillsList.size(); i++)
+            {
+                resumeDatabaseHelper.addUserSkills(skillsList.get(i));
+            }
+            return;
+        }
     }
 }
 

@@ -10,8 +10,6 @@ import android.support.v4.app.DialogFragment;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
-import static com.example.kaushik.jobs4u.R.id.textView;
-
 /**
  * Created by Kaushik on 6/3/2017.
  */

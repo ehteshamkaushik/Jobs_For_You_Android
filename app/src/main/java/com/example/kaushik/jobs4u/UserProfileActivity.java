@@ -12,16 +12,23 @@ import android.widget.TextView;
  */
 
 public class UserProfileActivity extends AppCompatActivity {
+    TextView usernameview;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_profile_layout);
+        Intent intent = getIntent();
+        final String usernametext = intent.getStringExtra("user");
+        usernameview = (TextView) findViewById(R.id.user);
+
+        usernameview.setText(usernametext);
 
         TextView resume = (TextView)findViewById(R.id.resume);
         resume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent loginIntent = new Intent(UserProfileActivity.this, ResumeActivity.class);
-                startActivity(loginIntent);
+                Intent resumeIntent = new Intent(UserProfileActivity.this, ResumeActivity.class);
+                resumeIntent.putExtra("username", usernametext);
+                startActivity(resumeIntent);
             }
         });
     }

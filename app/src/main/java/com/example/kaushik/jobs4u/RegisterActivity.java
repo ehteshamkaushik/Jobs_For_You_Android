@@ -63,6 +63,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 break;
 
             case R.id.signuptologin:
+                List<User> users = databasehelper.getAllUser();
+                for (int i = 0; i < users.size(); i++)
+                {
+                    System.out.println(users.get(i).getName());
+                }
                 Intent intentLogin = new Intent(getApplicationContext(), loginActivity.class);
                 startActivity(intentLogin);
                 break;

@@ -21,7 +21,7 @@
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/fullname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/father"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/mother"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -126,16 +126,6 @@
             </TableRow>
         </TableLayout>
 
-        <Button
-            android:id="@+id/adddate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Date"
-            android:layout_gravity="right"
-            android:layout_marginBottom="15dp"
-            android:layout_marginRight="10dp"
-            />
-
 
 
         <TextView
@@ -149,18 +139,16 @@
             android:textSize="20dp" />
 
 
-        <Spinner
-            android:id="@+id/religion"
-            style="@style/Widget.AppCompat.Spinner"
-            android:layout_width="match_parent"
+
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:entries="@array/religion_arrays"
-            android:popupBackground="@android:color/white"
-            android:prompt="@string/Religion_prompt"
-            android:visibility="visible" />
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -172,33 +160,15 @@
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
-        <RadioGroup
-            android:id="@+id/gender"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            >
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
-            <RadioButton
-                android:id="@+id/radioMale"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/radio_male"
-                android:textColor="@color/white"
-                />
-
-            <RadioButton
-                android:id="@+id/radioFemale"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/radio_female"
-                android:textColor="@color/white"
-                />
-
-        </RadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
@@ -210,7 +180,7 @@
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/nationality"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -272,16 +242,6 @@
                     android:text="Grade"/>
             </TableRow>
         </TableLayout>
-        <Button
-            android:id="@+id/addeducation1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Education"
-            android:layout_gravity="right"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -329,16 +289,6 @@
                     android:text="Duration"/>
             </TableRow>
         </TableLayout>
-        <Button
-            android:id="@+id/addexperience"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Experience"
-            android:layout_gravity="right"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            />
 
 
         <TextView
@@ -349,7 +299,8 @@
             android:layout_marginRight="10dp"
             android:text="Additional Skills*"
             android:textColor="@android:color/white"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            />
         <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -380,16 +331,6 @@
                     android:text="Recognition"/>
             </TableRow>
         </TableLayout>
-        <Button
-            android:id="@+id/addskill"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Skill"
-            android:layout_gravity="right"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            />
 
 
         <TextView
@@ -405,11 +346,10 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <EditText
+            <TextView
                 android:id="@+id/objective"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:inputType="text|textMultiLine"
                 android:background="@android:color/white"
                 android:gravity="top"
                 android:lines="10"
@@ -442,22 +382,6 @@
             android:layout_marginRight="10dp"
             android:padding="100dip"
             android:src="@drawable/businessman_48px"
-            android:layout_gravity="center"
-            />
-
-        <Button
-            android:id="@+id/addimage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="add image"
-            android:layout_gravity="right"
-            />
-
-        <Button
-            android:id="@+id/save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save Resume"
             android:layout_gravity="center"
             />
 

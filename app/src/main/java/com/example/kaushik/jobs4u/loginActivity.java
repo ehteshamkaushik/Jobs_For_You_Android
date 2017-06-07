@@ -85,6 +85,7 @@ public class loginActivity extends AppCompatActivity implements View.OnClickList
 
 
             Intent accountsIntent = new Intent(activity, UserProfileActivity.class);
+            accountsIntent.putExtra("user", usernametext);
             startActivity(accountsIntent);
 
 

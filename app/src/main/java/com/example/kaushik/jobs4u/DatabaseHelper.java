@@ -81,7 +81,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // Inserting Row
         db.insert(TABLE_USER, null, values);
-        System.out.println("Inserting into database");
+        long flag = db.insert(TABLE_USER, null, values);
+        if (flag == -1)
+            System.out.println("Row inserted");
+        else
+            System.out.println("something is wrong");
         db.close();
     }
 
