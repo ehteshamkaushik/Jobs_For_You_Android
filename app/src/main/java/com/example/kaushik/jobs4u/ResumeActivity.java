@@ -26,9 +26,15 @@ public class ResumeActivity extends AppCompatActivity {
         addresume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent addResumeIntent = new Intent(ResumeActivity.this, Resume_form.class);
-                addResumeIntent.putExtra("username", usernametext);
-                startActivity(addResumeIntent);
+                resumeDatabaseHelper db = new resumeDatabaseHelper(ResumeActivity.this);
+                if(db.checkUser(usernametext)){
+                    Toast.makeText(view.getContext(), "Resume Already Added", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent addResumeIntent = new Intent(ResumeActivity.this, Resume_form.class);
+                    addResumeIntent.putExtra("username", usernametext);
+                    startActivity(addResumeIntent);
+                }
             }
         });
 
@@ -37,33 +43,34 @@ public class ResumeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 resumeDatabaseHelper db = new resumeDatabaseHelper(ResumeActivity.this);
-                boolean exs= db.doesDatabaseExists(ResumeActivity.this, "UserResumeManager.db");
-                System.out.println("database exists : " + exs);
-                List<UserResume> all = db.getAllUser();
-                for (int i = 0; i < all.size(); i++)
-                {
-                    System.out.println(all.get(i).username + " " + all.get(i).dob);
-                }
                 if(db.checkUser(usernametext))
                 {
-                    Toast.makeText(view.getContext(), "Found", Toast.LENGTH_LONG).show();
+                    Intent viewResume = new Intent(ResumeActivity.this, ViewResume.class);
+                    viewResume.putExtra("username", usernametext);
+                    startActivity(viewResume);
                 }
                 else
                 {
-                    Toast.makeText(view.getContext(), "Not Found", Toast.LENGTH_LONG).show();
+                    Toast.makeText(view.getContext(), "Add your resume first", Toast.LENGTH_SHORT).show();
                 }
-                Intent viewResume = new Intent(ResumeActivity.this, ViewResume.class);
-                viewResume.putExtra("username", usernametext);
-                startActivity(viewResume);
+
             }
         });
         TextView editresume = (TextView) findViewById(R.id.edit_resume);
         editresume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent editresume = new Intent(ResumeActivity.this, EditResume.class);
-                editresume.putExtra("username", usernametext);
-                startActivity(editresume);
+                resumeDatabaseHelper db = new resumeDatabaseHelper(ResumeActivity.this);
+                if(db.checkUser(usernametext))
+                {
+                    Intent editresume = new Intent(ResumeActivity.this, EditResume.class);
+                    editresume.putExtra("username", usernametext);
+                    startActivity(editresume);
+                }
+                else
+                {
+                    Toast.makeText(v.getContext(), "Add your resume first", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

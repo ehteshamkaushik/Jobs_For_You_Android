@@ -27,7 +27,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        getSupportActionBar().hide();
 
         initViews();
         initListeners();
@@ -63,11 +62,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 break;
 
             case R.id.signuptologin:
-                List<User> users = databasehelper.getAllUser();
-                for (int i = 0; i < users.size(); i++)
-                {
-                    System.out.println(users.get(i).getName());
-                }
                 Intent intentLogin = new Intent(getApplicationContext(), loginActivity.class);
                 startActivity(intentLogin);
                 break;
@@ -96,6 +90,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             Toast.makeText(this, errormsg, Toast.LENGTH_LONG).show();
             return;
         }
+        if(password.length() < 6)
+        {
+            errormsg = "Password must contain at least 6 characters";
+            Toast.makeText(this, errormsg, Toast.LENGTH_LONG).show();
+            return;
+        }
 
         if (confirmdpassword.equals("")) {
             errormsg = "Please Enter Password to Confirm";
@@ -113,12 +113,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             user.setName(username);
             user.setEmail(email);
             user.setPassword(password);
+            user.setMobile("Not Given");
+            user.setAddress("Not Given");
 
             databasehelper.addUser(user);
-            System.out.println("Insert ");
-
-            Toast.makeText(this, "Welcome " + username, Toast.LENGTH_LONG).show();
-            return;
+            Intent intent = new Intent(RegisterActivity.this, UserProfileActivity.class);
+            intent.putExtra("user", user.getName());
+            startActivity(intent);
         } else {
             // Snack Bar to show error message that record already exists
             errormsg = "Username already exists";

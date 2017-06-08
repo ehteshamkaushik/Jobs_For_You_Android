@@ -10,6 +10,28 @@ public class User {
     private String name;
     private String email;
     private String password;
+    private String mobile;
+    private String address;
+
+    public User() {
+    }
+
+    public String getMobile() {
+
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public int getId() {
         return id;

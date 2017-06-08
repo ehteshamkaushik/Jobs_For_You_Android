@@ -106,7 +106,7 @@ public class EditResume extends AppCompatActivity implements View.OnClickListene
                         day.setText(d.getText());
                         year.setText(y.getText());
                         month.setText(m.getText());
-                        
+
                         resume.setDob(d.getText() + " " + m.getText() + " " + y.getText());
                         dialog.dismiss();
                     }

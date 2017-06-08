@@ -16,19 +16,23 @@
             </intent-filter>
         </activity>
         <activity android:name=".loginActivity"
-            android:label="Numbers" />
+            android:label="Log in" />
         <activity android:name=".UserProfileActivity"
-            android:label="Numbers" />
+            android:label="User Profile" />
         <activity android:name=".ResumeActivity"
-            android:label="Numbers" />
+            android:label="Resume" />
         <activity android:name=".Resume_form"
-            android:label="Numbers" />
+            android:label="Add Resume" />
         <activity android:name=".RegisterActivity"
-            android:label="Numbers" />
+            android:label="Sign Up" />
         <activity android:name=".ViewResume"
-            android:label="Numbers" />
+            android:label="My Resume" />
         <activity android:name=".EditResume"
             android:label="Edit Resume" />
+        <activity android:name=".ViewProfile"
+            android:label="Profile Info" />
+        <activity android:name=".EditProfile"
+            android:label="Edit Profile" />
     </application>
 
 </manifest>

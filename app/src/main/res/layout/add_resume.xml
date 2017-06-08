@@ -109,19 +109,20 @@
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
+                    android:gravity="center"
                     android:text="Day"/>
                 <TextView
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Month"/>
                 <TextView
                     android:layout_width="100dp"
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Year"/>
             </TableRow>
         </TableLayout>
@@ -160,7 +161,9 @@
             android:entries="@array/religion_arrays"
             android:popupBackground="@android:color/white"
             android:prompt="@string/Religion_prompt"
-            android:visibility="visible" />
+            android:visibility="visible"
+            android:background="@android:color/white"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -250,25 +253,26 @@
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
+                    android:gravity="center"
                     android:text="Examination"/>
                 <TextView
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Year"/>
                 <TextView
                     android:layout_width="100dp"
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Institute"/>
                 <TextView
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Grade"/>
             </TableRow>
         </TableLayout>
@@ -313,19 +317,20 @@
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
+                    android:gravity="center"
                     android:text="Company"/>
                 <TextView
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Designation"/>
                 <TextView
                     android:layout_width="100dp"
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Duration"/>
             </TableRow>
         </TableLayout>
@@ -370,13 +375,14 @@
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
+                    android:gravity="center"
                     android:text="Skill"/>
                 <TextView
                     android:layout_marginLeft="1dp"
                     android:layout_width="100dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Recognition"/>
             </TableRow>
         </TableLayout>

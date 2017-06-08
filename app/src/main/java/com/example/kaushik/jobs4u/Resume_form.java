@@ -83,15 +83,18 @@ public class Resume_form extends AppCompatActivity {
 
                 final TextView day = new TextView(v.getContext());
                 day.setBackgroundResource(R.color.white);
+                day.setPadding((int) (1*scale + 0.5f), 0, 0, 0);
                 day.setWidth(pixels);
 
                 final TextView year = new TextView(v.getContext());
                 year.setBackgroundResource(R.color.white);
+                year.setPadding((int) (1*scale + 0.5f), 0, 0, 0);
                 year.setWidth(pixels);
 
                 final TextView month = new TextView(v.getContext());
                 month.setBackgroundResource(R.color.white);
                 month.setWidth(pixels);
+                month.setPadding((int) (1*scale + 0.5f), 0, 0, 0);
 
 
 
