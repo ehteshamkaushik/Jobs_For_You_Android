@@ -17,21 +17,20 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:text="Full Name*"
+            android:text="Full Name"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/fullname"
+            android:id="@+id/fullnameview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:textSize="20dp"
-            tools:background="@android:color/white"
             tools:inputType="text"
-            android:background="@color/white"
+            android:textColor="@android:color/holo_green_light"
             />
 
         <TextView
@@ -40,21 +39,20 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Father's Name*"
+            android:text="Father's Name"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/father"
+            android:id="@+id/fatherview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:textSize="20dp"
-            tools:background="@android:color/white"
             tools:inputType="text"
-            android:background="@color/white"
+            android:textColor="@android:color/holo_green_light"
             />
 
         <TextView
@@ -63,21 +61,20 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Mother's Name*"
+            android:text="Mother's Name"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/mother"
+            android:id="@+id/motherview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:textSize="20dp"
-            tools:background="@android:color/white"
             tools:inputType="text"
-            android:background="@android:color/white"
+            android:textColor="@android:color/holo_green_light"
             />
 
         <TextView
@@ -86,45 +83,19 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Date of Birth*"
+            android:text="Date of Birth"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
-        <TableLayout
-            android:layout_width="fill_parent"
+        <TextView
+            android:id="@+id/dob_view"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#CCC"
-            android:paddingTop="1dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:stretchColumns="1"
-            android:id="@+id/table_dob">
-            <TableRow
-                android:background="#CCC"
-                android:paddingBottom="1dp"
-                android:paddingRight="1dp">
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_marginLeft="1dp"
-                    android:padding="5dp"
-                    android:background="#FFF"
-                    android:text="Day"/>
-                <TextView
-                    android:layout_marginLeft="1dp"
-                    android:padding="5dp"
-                    android:background="#FFF"
-                    android:gravity="right"
-                    android:text="Month"/>
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_marginLeft="1dp"
-                    android:padding="5dp"
-                    android:background="#FFF"
-                    android:gravity="right"
-                    android:text="Year"/>
-            </TableRow>
-        </TableLayout>
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="20dp" />
 
 
 
@@ -142,12 +113,13 @@
 
 
         <TextView
+            android:id="@+id/religionview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/holo_green_light"
             android:textSize="20dp" />
 
         <TextView
@@ -157,8 +129,19 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:text="Gender*"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/holo_green_light"
             android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/genderview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="20dp" />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -166,28 +149,19 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:textColor="@android:color/white"
-            android:textSize="20dp" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Nationality*"
+            android:text="Nationality"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/nationality"
+            android:id="@+id/nationalityview"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@android:color/white" />
+            android:textSize="20dp"
+            android:textColor="@android:color/holo_green_light" />
 
 
         <TextView
@@ -196,7 +170,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Education*"
+            android:text="Education"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
@@ -206,7 +180,7 @@
             android:background="#CCC"
             android:paddingTop="1dp"
             android:stretchColumns="0, 2"
-            android:id="@+id/table_education"
+            android:id="@+id/table_education_view"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -249,7 +223,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Experience*"
+            android:text="Experience"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
@@ -259,7 +233,7 @@
             android:background="#CCC"
             android:paddingTop="1dp"
             android:stretchColumns="0, 1"
-            android:id="@+id/table_experience"
+            android:id="@+id/table_experience_view"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -297,7 +271,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Additional Skills*"
+            android:text="Additional Skills"
             android:textColor="@android:color/white"
             android:textSize="20dp"
             />
@@ -307,7 +281,7 @@
             android:background="#CCC"
             android:paddingTop="1dp"
             android:stretchColumns="0, 1"
-            android:id="@+id/table_skills"
+            android:id="@+id/table_skills_view"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -339,25 +313,22 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Career Objective*"
+            android:text="Career Objective"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/objective"
+                android:id="@+id/objectiveview"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@android:color/white"
+                android:textColor="@android:color/holo_green_light"
                 android:gravity="top"
                 android:lines="10"
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:textSize="20dp"
                 />
-        </ScrollView>
 
 
 
@@ -368,20 +339,19 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Personal Image*"
+            android:text="Personal Image"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
 
-        <ImageButton
-            android:id="@+id/personalimage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/personalimageview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:padding="100dip"
-            android:src="@drawable/businessman_48px"
             android:layout_gravity="center"
             />
 

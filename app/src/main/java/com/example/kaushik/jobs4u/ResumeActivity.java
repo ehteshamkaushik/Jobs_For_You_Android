@@ -52,6 +52,18 @@ public class ResumeActivity extends AppCompatActivity {
                 {
                     Toast.makeText(view.getContext(), "Not Found", Toast.LENGTH_LONG).show();
                 }
+                Intent viewResume = new Intent(ResumeActivity.this, ViewResume.class);
+                viewResume.putExtra("username", usernametext);
+                startActivity(viewResume);
+            }
+        });
+        TextView editresume = (TextView) findViewById(R.id.edit_resume);
+        editresume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent editresume = new Intent(ResumeActivity.this, EditResume.class);
+                editresume.putExtra("username", usernametext);
+                startActivity(editresume);
             }
         });
 

@@ -25,6 +25,10 @@
             android:label="Numbers" />
         <activity android:name=".RegisterActivity"
             android:label="Numbers" />
+        <activity android:name=".ViewResume"
+            android:label="Numbers" />
+        <activity android:name=".EditResume"
+            android:label="Edit Resume" />
     </application>
 
 </manifest>

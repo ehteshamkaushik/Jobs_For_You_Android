@@ -22,7 +22,7 @@
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/fullname"
+            android:id="@+id/fullnameedit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -45,7 +45,7 @@
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/father"
+            android:id="@+id/fatheredit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -68,7 +68,7 @@
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/mother"
+            android:id="@+id/motheredit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
@@ -99,7 +99,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:stretchColumns="1"
-            android:id="@+id/table_dob">
+            android:id="@+id/table_dob_edit">
             <TableRow
                 android:background="#CCC"
                 android:paddingBottom="1dp"
@@ -127,7 +127,7 @@
         </TableLayout>
 
         <Button
-            android:id="@+id/adddate"
+            android:id="@+id/adddateedit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Date"
@@ -150,7 +150,7 @@
 
 
         <Spinner
-            android:id="@+id/religion"
+            android:id="@+id/religionedit"
             style="@style/Widget.AppCompat.Spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -173,7 +173,7 @@
             android:textSize="20dp" />
 
         <RadioGroup
-            android:id="@+id/gender"
+            android:id="@+id/genderedit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -182,7 +182,7 @@
             >
 
             <RadioButton
-                android:id="@+id/radioMale"
+                android:id="@+id/radioMaleedit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
@@ -191,7 +191,7 @@
                 />
 
             <RadioButton
-                android:id="@+id/radioFemale"
+                android:id="@+id/radioFemaleedit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/radio_female"
@@ -211,7 +211,7 @@
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/nationality"
+            android:id="@+id/nationalityedit"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -236,7 +236,7 @@
             android:background="#CCC"
             android:paddingTop="1dp"
             android:stretchColumns="0, 2"
-            android:id="@+id/table_education"
+            android:id="@+id/table_education_edit"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -273,7 +273,7 @@
             </TableRow>
         </TableLayout>
         <Button
-            android:id="@+id/addeducation1"
+            android:id="@+id/addeducationedit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Education"
@@ -299,7 +299,7 @@
             android:background="#CCC"
             android:paddingTop="1dp"
             android:stretchColumns="0, 1"
-            android:id="@+id/table_experience"
+            android:id="@+id/table_experience_edit"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -330,7 +330,7 @@
             </TableRow>
         </TableLayout>
         <Button
-            android:id="@+id/addexperience"
+            android:id="@+id/addexperienceedit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Experience"
@@ -356,7 +356,7 @@
             android:background="#CCC"
             android:paddingTop="1dp"
             android:stretchColumns="0, 1"
-            android:id="@+id/table_skills"
+            android:id="@+id/table_skills_edit"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -381,7 +381,7 @@
             </TableRow>
         </TableLayout>
         <Button
-            android:id="@+id/addskill"
+            android:id="@+id/addskilledit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Skill"
@@ -406,7 +406,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
-                android:id="@+id/objective"
+                android:id="@+id/objectiveedit"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:inputType="text|textMultiLine"
@@ -434,7 +434,7 @@
 
 
         <ImageView
-            android:id="@+id/personalimage"
+            android:id="@+id/personalimageedit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -446,7 +446,7 @@
             />
 
         <Button
-            android:id="@+id/addimage"
+            android:id="@+id/addimageedit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="add image"
@@ -454,10 +454,10 @@
             />
 
         <Button
-            android:id="@+id/save"
+            android:id="@+id/savechanges"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save Resume"
+            android:text="Save Changes"
             android:layout_gravity="center"
             />
 

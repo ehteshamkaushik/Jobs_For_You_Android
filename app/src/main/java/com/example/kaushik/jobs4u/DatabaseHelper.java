@@ -19,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "UserManager.db";
+    private static final String DATABASE_NAME = "UserManager";
 
     // User table name
     private static final String TABLE_USER = "user";
@@ -81,11 +81,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // Inserting Row
         db.insert(TABLE_USER, null, values);
-        long flag = db.insert(TABLE_USER, null, values);
-        if (flag == -1)
-            System.out.println("Row inserted");
-        else
-            System.out.println("something is wrong");
+        //long flag = db.insert(TABLE_USER, null, values);
+        //long rows=db.insertWithOnConflict(TABLE_USER, null,  values,SQLiteDatabase.CONFLICT_REPLACE);
         db.close();
     }
 

@@ -148,7 +148,7 @@ public class UserResume {
         return stream.toByteArray();
     }
 
-    public static Bitmap getImage(byte[] image) {
+    public static Bitmap getBitmap(byte[] image) {
         return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
 }

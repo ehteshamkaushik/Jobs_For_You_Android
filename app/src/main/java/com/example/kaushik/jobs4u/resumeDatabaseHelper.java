@@ -21,7 +21,7 @@ public class resumeDatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "UserResumeManager.db";
+    private static final String DATABASE_NAME = "UserResumeManager";
 
     // User resume table names
     private static final String TABLE_USER_RESUME = "user_resume";
@@ -144,6 +144,7 @@ public class resumeDatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_USER_GENDER, userResume.getGender());
         values.put(COLUMN_USER_NATIONALITY, userResume.getNationality());
         values.put(COLUMN_USER_OBJECTIVE, userResume.getCareer_objective());
+        values.put(COLUMN_USER_IMAGE, userResume.getBytes(userResume.getImage()));
         System.out.println(userResume.getUsername());
         System.out.println(userResume.getFullname());
         System.out.println(userResume.getFather());
@@ -153,16 +154,13 @@ public class resumeDatabaseHelper extends SQLiteOpenHelper {
         System.out.println(userResume.getGender());
         System.out.println(userResume.getCareer_objective());
         System.out.println(userResume.getBytes(userResume.image));
-        values.put(COLUMN_USER_IMAGE, userResume.getBytes(userResume.image));
+
 
 
 
         // Inserting Row
         long flag = db.insert(TABLE_USER_RESUME, null, values);
-        if (flag == -1)
-            System.out.println("Row inserted");
-        else
-            System.out.println("something is wrong");
+        //long rows=db.insertWithOnConflict(TABLE_USER_RESUME, null,  values,SQLiteDatabase.CONFLICT_REPLACE);
         db.close();
     }
 
@@ -178,11 +176,7 @@ public class resumeDatabaseHelper extends SQLiteOpenHelper {
 
         // Inserting Row
         db.insert(TABLE_USER_RESUME_EDUCATION, null, values);
-        long flag = db.insert(TABLE_USER_RESUME_EDUCATION, null, values);
-        if (flag == -1)
-            System.out.println("education Row inserted");
-        else
-            System.out.println("something is wrong");
+        //long rows=db.insertWithOnConflict(TABLE_USER_RESUME_EDUCATION, null,  values,SQLiteDatabase.CONFLICT_REPLACE);
         db.close();
     }
     public void addUserExperience(UserExperience userExperience) {
@@ -196,11 +190,8 @@ public class resumeDatabaseHelper extends SQLiteOpenHelper {
         // Inserting Row
         db.insert(TABLE_USER_RESUME_EXPERIENCE, null, values);
 
-        long flag = db.insert(TABLE_USER_RESUME_EXPERIENCE, null, values);
-        if (flag == -1)
-            System.out.println("experience Row inserted");
-        else
-            System.out.println("something is wrong");
+        //long flag = db.insert(TABLE_USER_RESUME_EXPERIENCE, null, values);
+       // long rows=db.insertWithOnConflict(TABLE_USER_RESUME_EXPERIENCE, null,  values,SQLiteDatabase.CONFLICT_REPLACE);
         db.close();
     }
 
@@ -213,11 +204,8 @@ public class resumeDatabaseHelper extends SQLiteOpenHelper {
 
         // Inserting Row
         db.insert(TABLE_USER_RESUME_SKILLS, null, values);
-        long flag = db.insert(TABLE_USER_RESUME_SKILLS, null, values);
-        if (flag == -1)
-            System.out.println("skills Row inserted");
-        else
-            System.out.println("something is wrong");
+        //long flag = db.insert(TABLE_USER_RESUME_SKILLS, null, values);
+        //long rows=db.insertWithOnConflict(TABLE_USER_RESUME_SKILLS, null,  values,SQLiteDatabase.CONFLICT_REPLACE);
         db.close();
     }
 
@@ -401,6 +389,7 @@ public class resumeDatabaseHelper extends SQLiteOpenHelper {
         // array of columns to fetch
         String[] columns = {
                 COLUMN_USER_NAME,
+                COLUMN_USER_FULLNAME,
                 COLUMN_USER_FATHER,
                 COLUMN_USER_MOTHER,
                 COLUMN_USER_DOB,
@@ -435,7 +424,16 @@ public class resumeDatabaseHelper extends SQLiteOpenHelper {
                 userResume.setUsername(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
                 userResume.setFullname(cursor.getString(cursor.getColumnIndex(COLUMN_USER_FULLNAME)));
                 userResume.setFather(cursor.getString(cursor.getColumnIndex(COLUMN_USER_FATHER)));
+                userResume.setMother(cursor.getString(cursor.getColumnIndex(COLUMN_USER_MOTHER)));
                 userResume.setReligion(cursor.getString(cursor.getColumnIndex(COLUMN_USER_RELIGION)));
+                userResume.setGender(cursor.getString(cursor.getColumnIndex(COLUMN_USER_GENDER)));
+                userResume.setNationality(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NATIONALITY)));
+                userResume.setDob(cursor.getString(cursor.getColumnIndex(COLUMN_USER_DOB)));
+                userResume.setCareer_objective(cursor.getString(cursor.getColumnIndex(COLUMN_USER_OBJECTIVE)));
+                byte[] image_data = cursor.getBlob(cursor.getColumnIndex(COLUMN_USER_IMAGE));
+                userResume.setImage(userResume.getBitmap(image_data));
+
+
                 // Adding user record to list
                 userResumes.add(userResume);
             } while (cursor.moveToNext());
@@ -483,6 +481,35 @@ public class resumeDatabaseHelper extends SQLiteOpenHelper {
         }
 
         return false;
+    }
+
+
+
+    public void deleteUser(String username) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        // delete user record by id
+        db.delete(TABLE_USER_RESUME, COLUMN_USER_NAME + " = ?", new String[]{username});
+        db.close();
+    }
+
+    public void deleteUsereducation(String username) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        // delete user record by id
+        db.delete(TABLE_USER_RESUME_EDUCATION, COLUMN_EDUCATION_NAME + " = ?", new String[]{username});
+        db.close();
+    }
+    public void deleteUserExperience(String username) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        // delete user record by id
+        db.delete(TABLE_USER_RESUME_EXPERIENCE, COLUMN_EXPERIENCE_NAME + " = ?", new String[]{username});
+        db.close();
+    }
+
+    public void deleteUserSkills(String username) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        // delete user record by id
+        db.delete(TABLE_USER_RESUME_SKILLS, COLUMN_SKILL_USERNAME + " = ?", new String[]{username});
+        db.close();
     }
 
 
