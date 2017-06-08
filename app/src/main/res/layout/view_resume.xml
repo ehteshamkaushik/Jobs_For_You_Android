@@ -128,8 +128,8 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Gender*"
-            android:textColor="@android:color/holo_green_light"
+            android:text="Gender"
+            android:textColor="@android:color/white"
             android:textSize="20dp" />
 
         <TextView
@@ -193,26 +193,27 @@
                     android:layout_width="100dp"
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
+                    android:gravity="center"
                     android:background="#FFF"
                     android:text="Examination"/>
                 <TextView
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Year"/>
                 <TextView
                     android:layout_width="100dp"
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Institute"/>
                 <TextView
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Grade"/>
             </TableRow>
         </TableLayout>
@@ -247,19 +248,20 @@
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
+                    android:gravity="center"
                     android:text="Company"/>
                 <TextView
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Designation"/>
                 <TextView
                     android:layout_width="100dp"
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Duration"/>
             </TableRow>
         </TableLayout>
@@ -294,6 +296,7 @@
                     android:layout_width="100dp"
                     android:layout_marginLeft="1dp"
                     android:padding="5dp"
+                    android:gravity="center"
                     android:background="#FFF"
                     android:text="Skill"/>
                 <TextView
@@ -301,7 +304,7 @@
                     android:layout_width="100dp"
                     android:padding="5dp"
                     android:background="#FFF"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:text="Recognition"/>
             </TableRow>
         </TableLayout>

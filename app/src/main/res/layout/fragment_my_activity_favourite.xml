@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kaushik.jobs4u.MyActivityFavourite">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EFD"
+        android:layout_margin="10dp"
+        android:text="বাংলাদেশ প্রকৌশল বিশ্ববিদ্যালয়, ঢাকা সহকারী প্রোগ্রামার - দুর্ঘটনা রিসার্চ ইনস্টিটিউট \nEducation: শিক্ষাগত যোগ্যতা, অভিজ্ঞতা এবং অন্যান্ন বিষয়ে বিস্তারিত তথ্য বিশ্ববিদ্যালয়ের নির্ধারিত ওয়েবসাইটে ...\nExperience: Na   \nDeadline: M" />
+
+</FrameLayout>

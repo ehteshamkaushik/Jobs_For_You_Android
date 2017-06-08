@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kaushik.jobs4u.MyActivityApplied">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EFD"
+        android:layout_margin="10dp"
+        android:text="Bit Makers Ltd.\nExecutive Content Writer\nEducation:BS/ MS in English or BBA/ MBA in Marketing.\nExperience:1 to 2 year(s)\nDeadline: Mar 25, 2017" />
+
+</FrameLayout>

@@ -38,8 +38,6 @@ public class ViewResume extends AppCompatActivity{
         initViews();
         initObjects();
 
-        Toast.makeText(this, usernametext, Toast.LENGTH_LONG).show();
-
         resumeList = resumeDatabaseHelper.getaUser(usernametext);
         educationList = resumeDatabaseHelper.getAllEducation(usernametext);
         experienceList = resumeDatabaseHelper.getAllExperience(usernametext);

@@ -61,6 +61,10 @@ public class EditProfile extends AppCompatActivity{
                             {
                                 Toast.makeText(v.getContext(), "Please Enter New Password", Toast.LENGTH_LONG).show();
                             }
+                            else if (newpw.getText().toString().length() < 6)
+                            {
+                                Toast.makeText(v.getContext(), "Password must Contain at least 6 characters", Toast.LENGTH_LONG).show();
+                            }
                             else if (confirmpw.getText().toString().equals(""))
                             {
                                 Toast.makeText(v.getContext(), "Please Confirm New Password", Toast.LENGTH_LONG).show();
@@ -76,6 +80,7 @@ public class EditProfile extends AppCompatActivity{
                                 for (int i = 0; i < newpw.getText().toString().length(); i++)
                                     str+='*';
                                 password.setText(str);
+                                Toast.makeText(v.getContext(), "Password Changed", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                             }
                         }
@@ -108,6 +113,7 @@ public class EditProfile extends AppCompatActivity{
 
             databaseHelper.deleteUser(user);
             databaseHelper.addUser(user);
+            Toast.makeText(this, "Changes Saved", Toast.LENGTH_SHORT).show();
             return;
         }
     }

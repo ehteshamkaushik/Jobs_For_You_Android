@@ -33,6 +33,9 @@
             android:label="Profile Info" />
         <activity android:name=".EditProfile"
             android:label="Edit Profile" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".MyActivityActivity" />
+        <activity android:name=".ForumActivity"></activity>
     </application>
 
 </manifest>

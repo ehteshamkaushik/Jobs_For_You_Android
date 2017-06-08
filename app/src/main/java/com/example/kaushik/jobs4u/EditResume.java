@@ -63,7 +63,6 @@ public class EditResume extends AppCompatActivity implements View.OnClickListene
         initObjects();
         initListeners();
         usernametext = intent.getStringExtra("username");
-        Toast.makeText(this, usernametext, Toast.LENGTH_LONG).show();
         restore();
 
 
@@ -295,8 +294,7 @@ public class EditResume extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onClick(View v) {
                 SaveResumetoDatabase();
-                Toast.makeText(v.getContext(), "Resume Successfully Added", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(EditResume.this, ResumeActivity.class);
+
             }
         });
 
@@ -627,6 +625,11 @@ public class EditResume extends AppCompatActivity implements View.OnClickListene
             {
                 resumeDatabaseHelper.addUserSkills(skillsList.get(i));
             }
+
+            Toast.makeText(this, "Changes Saved", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(EditResume.this, ResumeActivity.class);
+            intent.putExtra("username", usernametext);
+            startActivity(intent);
             return;
         }
     }

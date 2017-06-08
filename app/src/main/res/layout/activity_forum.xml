@@ -1,0 +1,124 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.kaushik.jobs4u.MyActivityHistory">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="15dp"
+        android:text="Can anybody tell me the easiest way to Bit Makers Ltd. from Azimpur?"
+        android:background="#EFD"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="15dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@android:color/white"
+        android:text="5 hours ago"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+            android:textColor="@android:color/white"
+            android:text="Like"/>
+        <TextView
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:background="#FFF"
+            android:layout_marginEnd="30dp"
+            android:text="38"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:textColor="@android:color/white"
+            android:text="Comments"/>
+        <TextView
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+            android:background="#FFF"
+            android:layout_gravity="center"
+            android:text="14"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#EFD"
+        android:padding="15dp"
+        android:text="I faced some critical problems for the interview in the Bit Makers Ltd. They didn't give me any clear specification" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="15dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@android:color/white"
+        android:text="2 days ago"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+            android:textColor="@android:color/white"
+            android:text="Like"/>
+        <TextView
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:background="#FFF"
+            android:layout_marginEnd="30dp"
+            android:text="71"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:textColor="@android:color/white"
+            android:text="Comments"/>
+        <TextView
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+            android:background="#FFF"
+            android:layout_gravity="center"
+            android:text="11"/>
+    </LinearLayout>
+
+</LinearLayout>

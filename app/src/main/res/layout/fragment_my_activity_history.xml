@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.kaushik.jobs4u.MyActivityHistory">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Bit Makers Ltd.\nExecutive Content Writer\nEducation:BS/ MS in English or BBA/ MBA in Marketing.\nExperience:1 to 2 year(s) \nDeadline: Mar 25, 2017"
+        android:background="#EFD"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#EFD"
+        android:text="বাংলাদেশ প্রকৌশল বিশ্ববিদ্যালয়, ঢাকা সহকারী প্রোগ্রামার - দুর্ঘটনা রিসার্চ ইনস্টিটিউট \nEducation: শিক্ষাগত যোগ্যতা, অভিজ্ঞতা এবং অন্যান্ন বিষয়ে বিস্তারিত তথ্য বিশ্ববিদ্যালয়ের নির্ধারিত ওয়েবসাইটে ...\nExperience: Na   \nDeadline: M" />
+
+
+</LinearLayout>

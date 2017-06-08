@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kaushik.jobs4u.NotificationJobTab">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="2 hours ago\nfrom Bit Makers Ltd.\nCongratulations!\nYou are selected for interview for\nthe post -Executive Content Writer-\nInterview Date : April 16, 2017 \nTime : 10:00 am"
+        android:background="#DFE"/>
+
+</FrameLayout>

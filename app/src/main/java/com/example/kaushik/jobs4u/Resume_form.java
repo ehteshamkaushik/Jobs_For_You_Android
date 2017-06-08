@@ -61,7 +61,6 @@ public class Resume_form extends AppCompatActivity {
         initViews();
         initObjects();
         usernametext = intent.getStringExtra("username");
-        Toast.makeText(this, usernametext, Toast.LENGTH_LONG).show();
 
 
 
@@ -106,18 +105,33 @@ public class Resume_form extends AppCompatActivity {
                 addbutton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        day.setText(d.getText());
-                        year.setText(y.getText());
-                        month.setText(m.getText());
+                        if(d.getText().toString().equals("") || (Integer.parseInt(d.getText().toString())) > 31)
+                        {
+                            Toast.makeText(v.getContext(), "Please Enter a Valid Day", Toast.LENGTH_SHORT).show();
+                        }
+                        else if (m.getText().toString().equals(""))
+                        {
+                            Toast.makeText(v.getContext(), "Please Enter a Valid Month", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(y.getText().toString().equals(""))
+                        {
+                            Toast.makeText(v.getContext(), "Please Enter a Valid Year", Toast.LENGTH_SHORT).show();
+                        }
 
-                        date.addView(day);
-                        date.addView(month);
-                        date.addView(year);
+                        else {
+                            day.setText(d.getText());
+                            year.setText(y.getText());
+                            month.setText(m.getText());
 
-                        DateTable.addView(date);
-                        adddate.setVisibility(View.INVISIBLE);
-                        userResume.setDob(d.getText() + " " + m.getText() + " " + y.getText());
-                        dialog.dismiss();
+                            date.addView(day);
+                            date.addView(month);
+                            date.addView(year);
+
+                            DateTable.addView(date);
+                            adddate.setVisibility(View.INVISIBLE);
+                            userResume.setDob(d.getText() + " " + m.getText() + " " + y.getText());
+                            dialog.dismiss();
+                        }
                     }
                 });
                 dialog.show();
@@ -306,8 +320,6 @@ public class Resume_form extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SaveResumetoDatabase();
-                Toast.makeText(v.getContext(), "Resume Successfully Added", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(Resume_form.this, ResumeActivity.class);
             }
         });
 
@@ -334,7 +346,6 @@ public class Resume_form extends AppCompatActivity {
                 else
                 {
                     userResume.setGender("Female");
-                    Toast.makeText(Resume_form.this, "Female", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -468,6 +479,11 @@ public class Resume_form extends AppCompatActivity {
             {
                 resumeDatabaseHelper.addUserSkills(skillsList.get(i));
             }
+
+            Toast.makeText(this, "Resume Successfully Added", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Resume_form.this, ResumeActivity.class);
+            intent.putExtra("username", usernametext);
+            startActivity(intent);
             return;
         }
     }

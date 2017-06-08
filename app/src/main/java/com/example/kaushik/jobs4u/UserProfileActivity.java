@@ -25,6 +25,31 @@ public class UserProfileActivity extends AppCompatActivity {
 
         usernameview.setText(usernametext);
 
+        TextView forum = (TextView)findViewById(R.id.forum);
+        forum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), ForumActivity.class);
+                startActivity(i);
+            }
+        });
+        TextView myActivity = (TextView)findViewById(R.id.myActivity);
+        myActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MyActivityActivity.class);
+                startActivity(i);
+            }
+        });
+        TextView notification = (TextView)findViewById(R.id.notification);
+        notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), NotificationActivity.class);
+                startActivity(i);
+            }
+        });
+
         TextView resume = (TextView)findViewById(R.id.resume);
         resume.setOnClickListener(new View.OnClickListener() {
             @Override
