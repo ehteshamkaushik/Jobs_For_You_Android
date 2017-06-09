@@ -380,6 +380,7 @@ public class Resume_form extends AppCompatActivity {
             Uri selectedImage = data.getData();
             Bitmap bitmap = null;
             try {
+
                 bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
                 bitmap = decodeUri(this, selectedImage, 300);
                 ImageView imageView = (ImageView) findViewById(R.id.personalimage);

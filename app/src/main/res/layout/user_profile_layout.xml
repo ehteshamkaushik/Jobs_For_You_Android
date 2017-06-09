@@ -4,16 +4,19 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_gravity="right"
-        android:id="@+id/user"
-        android:textColor="@color/white"
-        android:textSize="25dp"
-        android:layout_marginBottom="50dp"
-        />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right"
+            android:id="@+id/user"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:layout_marginBottom="50dp"
+            />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -23,7 +26,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/businessman_48px"
+            android:background="@drawable/ic_description_white_18dp"
             android:layout_marginLeft="20dp"
             />
 
@@ -49,7 +52,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/businessman_48px"
+            android:background="@drawable/ic_work_white_18dp"
             android:layout_marginLeft="20dp"
             />
 
@@ -74,7 +77,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/businessman_48px"
+            android:background="@drawable/ic_perm_identity_white_18dp"
             android:layout_marginLeft="20dp"
             />
 
@@ -100,7 +103,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/businessman_48px"
+            android:background="@drawable/ic_create_white_18dp"
             android:layout_marginLeft="20dp"
             />
 
@@ -125,8 +128,9 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/businessman_48px"
+            android:background="@drawable/ic_question_answer_white_18dp"
             android:layout_marginLeft="20dp"
+            android:layout_gravity="center_horizontal"
             />
 
         <TextView
@@ -151,7 +155,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/businessman_48px"
+            android:background="@drawable/ic_content_paste_white_18dp"
             android:layout_marginLeft="20dp"
             />
 
@@ -177,7 +181,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/businessman_48px"
+            android:background="@drawable/ic_power_settings_new_white_18dp"
             android:layout_marginLeft="20dp"
             />
 

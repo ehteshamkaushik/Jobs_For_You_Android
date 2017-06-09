@@ -33,9 +33,19 @@
             android:label="Profile Info" />
         <activity android:name=".EditProfile"
             android:label="Edit Profile" />
-        <activity android:name=".NotificationActivity" />
-        <activity android:name=".MyActivityActivity" />
-        <activity android:name=".ForumActivity"></activity>
+        <activity android:name=".NotificationActivity"
+            android:label="Notifications"
+            />
+        <activity android:name=".MyActivityActivity"
+            android:label="My Activity"
+            />
+        <activity android:name=".ForumActivity"
+            android:label="My Forum Posts"
+            >
+        </activity>
     </application>
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

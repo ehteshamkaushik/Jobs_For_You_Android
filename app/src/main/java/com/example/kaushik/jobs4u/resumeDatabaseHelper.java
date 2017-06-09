@@ -21,7 +21,7 @@ public class resumeDatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "UserResumeManager";
+    private static final String DATABASE_NAME = "UserResumeManager.db";
 
     // User resume table names
     private static final String TABLE_USER_RESUME = "user_resume";
